@@ -3,15 +3,11 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
+  base: "./", // importante para links relativos
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
-  build: {
-    rollupOptions: {
-      input: path.resolve(__dirname, "index.html"), // ⚠️ isso aqui é crucial
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });
