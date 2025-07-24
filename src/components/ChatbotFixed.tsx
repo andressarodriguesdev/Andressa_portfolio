@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { ChatWindow } from "./ChatWindow";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { baseContext } from "@/data/laura-context";
 
 const ai = new GoogleGenAI({
@@ -41,20 +41,32 @@ export function ChatbotFixed() {
     setMessages((prev) => [...prev, userMessage]);
     setInputMessage("");
     setLoading(true);
+
     const hoje = new Date().toLocaleDateString("pt-BR");
+
+    const prompt = `
+Você é Laura, assistente virtual da Andressa Rodrigues.
+
+Hoje é ${hoje}.
+
+Regras:
+- Se a pergunta for uma saudação (ex: olá, oi, tudo bem, bom dia), responda com educação e simpatia.
+- Se a pergunta for sobre o currículo ou experiências da Andressa, responda exclusivamente com base nas informações abaixo.
+- Se a pergunta estiver fora dessas regras, diga educadamente que não pode responder.
+
+Informações da Andressa:
+${baseContext}
+
+Pergunta do usuário: ${inputMessage}
+
+Resposta:
+`;
+
     try {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: `Você é Laura, assistente virtual da Andressa Rodrigues. Baseie suas respostas exclusivamente nas informações a seguir:
-
-        ${baseContext}
-        Hoje é dia ${hoje}.
-        Se a pergunta "${inputMessage}" estiver fora do contexto dessas informações, responda educadamente que não pode responder essa pergunta.
-
-        Pergunta: ${inputMessage}
-
-        Resposta:`,
-            });
+        contents: prompt,
+      });
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -78,6 +90,7 @@ export function ChatbotFixed() {
       setLoading(false);
     }
   };
+
   return (
     <Card className="bg-gradient-card border-0 shadow-soft-lg flex flex-col">
       <CardContent className="flex-1 p-0">
