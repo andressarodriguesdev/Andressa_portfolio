@@ -58,7 +58,7 @@ export function Hero() {
               </Button>
               
               <Button 
-              
+               onClick={handleDownloadCV}
                 size="lg" 
                 variant="outline"
                 className="border-primary/30 hover:bg-primary/10"
