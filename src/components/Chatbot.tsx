@@ -1,24 +1,24 @@
-import { useState } from "react"
-import { GoogleGenAI } from "@google/genai"
-import { MessageCircle, X, Send, Download, User, Bot } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { baseContext } from "../data/laura-context"
+import { useState } from "react";
+import { GoogleGenAI } from "@google/genai";
+import { MessageCircle, X, Send, Download, User, Bot } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { baseContext } from "../data/laura-context";
 
 interface Message {
-  id: string
-  content: string
-  isBot: boolean
-  timestamp: Date
+  id: string;
+  content: string;
+  isBot: boolean;
+  timestamp: Date;
 }
 
 const ai = new GoogleGenAI({
   apiKey: import.meta.env.VITE_GEMINI_API_KEY || "",
-})
+});
 
 export function Chatbot() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
@@ -27,24 +27,69 @@ export function Chatbot() {
       isBot: true,
       timestamp: new Date(),
     },
-  ])
-  const [inputMessage, setInputMessage] = useState("")
-  const [loading, setLoading] = useState(false)
+  ]);
+  const [inputMessage, setInputMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSendMessage = async () => {
-    if (!inputMessage.trim() || loading) return
+    const rawInput = inputMessage.trim();
+    const normalizedInput = rawInput
+      .toLowerCase()
+      .normalize("NFD") // remove acentos
+      .replace(/[\u0300-\u036f]/g, "") // remove acentos (continuação)
+      .replace(/[.,!?]/g, "") // remove pontuação básica
+      .replace(/\s+/g, " ") // espaços múltiplos viram 1 espaço
+      .trim();
+
+    if (!normalizedInput || loading) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
       content: inputMessage,
       isBot: false,
       timestamp: new Date(),
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+    setInputMessage("");
+    setLoading(true);
+
+    
+    // 💬 Lista de palavras de saudação
+    const greetingKeywords = [
+      "oi",
+      "ola",
+      "olá",
+      "bom dia",
+      "boa tarde",
+      "boa noite",
+      "e ai",
+      "tudo bem",
+      "tudo certo",
+      "como vai",
+      "valeu",
+      "obrigado",
+      "obrigada",
+    ];
+
+    // Verifica se qualquer palavra-chave está presente no texto
+    const isGreeting = greetingKeywords.some((keyword) =>
+      normalizedInput.includes(keyword)
+    );
+
+    if (isGreeting) {
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content:
+          "Olá! 😊 Como posso te ajudar a conhecer mais sobre a Andressa e seu currículo?",
+        isBot: true,
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, botMessage]);
+      setLoading(false);
+      return;
     }
-
-    setMessages((prev) => [...prev, userMessage])
-    setInputMessage("")
-    setLoading(true)
-
+    // 🤖 Caso não seja saudação, continua com a API
     try {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
@@ -52,39 +97,39 @@ export function Chatbot() {
 
 ${baseContext}
 
-Se a pergunta "${inputMessage}" estiver fora do contexto dessas informações, responda educadamente que não pode responder essa pergunta.
+Se a pergunta "${normalizedInput}" estiver fora do contexto dessas informações, responda educadamente que não pode responder essa pergunta.
 
-Pergunta: ${inputMessage}
+Pergunta: ${normalizedInput}
 
 Resposta:`,
-      })
+      });
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         content: response.text || "Desculpe, não entendi sua pergunta.",
         isBot: true,
         timestamp: new Date(),
-      }
+      };
 
-      setMessages((prev) => [...prev, botMessage])
+      setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      console.error("Erro ao chamar Gemini:", error)
+      console.error("Erro ao chamar Gemini:", error);
       const fallbackMessage: Message = {
         id: (Date.now() + 2).toString(),
         content:
           "Ops, tive um problema para responder. Pode tentar novamente em alguns instantes?",
         isBot: true,
         timestamp: new Date(),
-      }
-      setMessages((prev) => [...prev, fallbackMessage])
+      };
+      setMessages((prev) => [...prev, fallbackMessage]);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleDownloadCV = () => {
-    window.open("/Andressa_Rodrigues.pdf", "_blank")
-  }
+    window.open("/Andressa_Rodrigues.pdf", "_blank");
+  };
 
   return (
     <>
@@ -115,7 +160,8 @@ Resposta:`,
                 <div>
                   <h3 className="font-semibold">Laura - Chatbot</h3>
                   <p className="text-xs text-white/80">
-                    Montei um chatbot aqui que conhece todas as minhas habilidades, experiências e tem uma cópia do meu CV/Resume.
+                    Montei um chatbot aqui que conhece todas as minhas
+                    habilidades, experiências e tem uma cópia do meu CV/Resume.
                   </p>
                 </div>
               </div>
@@ -212,5 +258,5 @@ Resposta:`,
         </div>
       )}
     </>
-  )
+  );
 }
