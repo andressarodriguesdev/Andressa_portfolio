@@ -6,12 +6,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "src"),
     },
   },
   build: {
     rollupOptions: {
-      input: "index.html",
+      input: path.resolve(__dirname, "index.html"), // ⚠️ isso aqui é crucial
     },
   },
 });
