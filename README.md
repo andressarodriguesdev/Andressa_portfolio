@@ -59,5 +59,5 @@ Para contribuir, siga os passos:
 
 - Email: andressa.rodrigues.2172@gmail.com  
 - LinkedIn: [linkedin.com/in/andressarodrigues](https://linkedin.com/in/andressarodrigues)  
-- GitHub: [github.com/andressarodrigues](https://github.com/andressarodrigues)
+- GitHub: [github.com/andressarodriguesdev](https://github.com/andressarodriguesdev)
 
