@@ -1,7 +1,6 @@
 
 
-# Portfólio | Andressa Rodrigues
-
+# Portfólio Web — Andressa Rodrigues
 <img width="600" height="1000" alt="Image" src="https://github.com/user-attachments/assets/e389b8bd-ffaa-4805-b7cb-02d89779effd" />
 
 Bem-vindo(a) ao meu portfólio pessoal!  
@@ -58,7 +57,7 @@ Para contribuir, siga os passos:
 
 ## 📬 Contato
 
-- Email: andressa.rodrigues@email.com  
+- Email: andressa.rodrigues.2172@gmail.com  
 - LinkedIn: [linkedin.com/in/andressarodrigues](https://linkedin.com/in/andressarodrigues)  
 - GitHub: [github.com/andressarodrigues](https://github.com/andressarodrigues)
 
