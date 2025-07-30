@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Bot, Download, Send, User, X } from "lucide-react"
-import { baseContext } from "../data/laura-context" // ajuste o caminho conforme seu projeto
+import { baseContext } from "../data/laura-context" 
 
 
 

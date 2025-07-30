@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Portfolio Design System - Andressa Macedo Rodrigues
-All colors MUST be HSL.
-*/
 
 @layer base {
   :root {

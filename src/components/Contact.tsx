@@ -27,7 +27,7 @@ export function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
+   
     setTimeout(() => {
       toast({
         title: "Mensagem enviada!",
@@ -97,7 +97,6 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           <ChatbotFixed />
-          {/* Contact Information */}
           <div className="space-y-8">
             <Card className="bg-gradient-card border-0 shadow-soft-lg">
               <CardHeader>
