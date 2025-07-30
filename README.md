@@ -35,9 +35,9 @@ Este portfólio foi construído utilizando:
 - Contato com formulário funcional e links para redes sociais;
 - Responsividade mobile-first, para ótima experiência em todos dispositivos.
 
-<img width="447" height="596" alt="Image" src="https://github.com/user-attachments/assets/512c3673-aa43-4cb8-80c1-1bfe18deaca1" />
+<img width="300" height="400" alt="Image" src="https://github.com/user-attachments/assets/512c3673-aa43-4cb8-80c1-1bfe18deaca1" />
 
-<img width="447" height="600" alt="Image" src="https://github.com/user-attachments/assets/073e0eb9-e4cd-44c5-ac96-5e9564cfed9a" />
+<img width="300" height="400" alt="Image" src="https://github.com/user-attachments/assets/073e0eb9-e4cd-44c5-ac96-5e9564cfed9a" />
 
 ## 🚀 Como rodar localmente
 
