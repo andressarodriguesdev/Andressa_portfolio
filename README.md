@@ -1,10 +1,10 @@
 
 
-# Portfólio Web — Andressa Rodrigues
-<img width="600" height="1000" alt="Image" src="https://github.com/user-attachments/assets/e389b8bd-ffaa-4805-b7cb-02d89779effd" />
+# 🚀 Portfólio Web — Andressa Rodrigues
+<img width="700" height="700" alt="Image" src="https://github.com/user-attachments/assets/e389b8bd-ffaa-4805-b7cb-02d89779effd" />
 
-Bem-vindo(a) ao meu portfólio pessoal!  
-Este projeto foi desenvolvido para apresentar de forma profissional meus trabalhos, habilidades e experiências na área de integrações usando IA Generativas.
+Bem-vindo(a) ao meu postfólio, onde apresento alguns projetos que desenvolvi.
+Aproveitei também para criar um chatbot integrado com IA, com o objetivo de melhorar a experiência do recrutador.
 
 ## 🌐 Deploy
 
@@ -25,7 +25,7 @@ Este portfólio foi construído utilizando:
 - **React Query**
 - **Dark Mode** com alternância personalizada
 - **Deploy contínuo via Netlify**
-- **Chatbot inteligente "Laura" integrado com Jamie, para respostas contextuais**
+- **Chatbot inteligente "Laura" integrado com a IA Gemini, para respostas contextuais**
 
 ## 🧠 Destaques
 
@@ -35,6 +35,10 @@ Este portfólio foi construído utilizando:
 - Contato com formulário funcional e links para redes sociais;
 - Responsividade mobile-first, para ótima experiência em todos dispositivos.
 
+<img width="447" height="596" alt="Image" src="https://github.com/user-attachments/assets/512c3673-aa43-4cb8-80c1-1bfe18deaca1" />
+
+<img width="447" height="600" alt="Image" src="https://github.com/user-attachments/assets/073e0eb9-e4cd-44c5-ac96-5e9564cfed9a" />
+
 ## 🚀 Como rodar localmente
 
 ```bash
@@ -42,7 +46,7 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 npm install
 npm run dev
-````
+```
 
 ## 🤝 Como Contribuir
 
@@ -54,6 +58,12 @@ Para contribuir, siga os passos:
 - Faça commit das suas alterações (`git commit -m 'Add feature'`)
 - Faça push para a branch (`git push origin feature/nome-da-feature`)
 - Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT.  
+Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
 
 ## 📬 Contato
 
