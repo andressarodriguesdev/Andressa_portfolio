@@ -3,7 +3,7 @@
 # 🚀 Portfólio Web — Andressa Rodrigues
 <img width="700" height="700" alt="Image" src="https://github.com/user-attachments/assets/e389b8bd-ffaa-4805-b7cb-02d89779effd" />
 
-Bem-vindo(a) ao meu postfólio, onde apresento alguns projetos que desenvolvi.
+Bem-vindo(a) ao meu portfólio, onde apresento alguns projetos que desenvolvi.
 Aproveitei também para criar um chatbot integrado com IA, com o objetivo de melhorar a experiência do recrutador.
 
 ## 🌐 Deploy
@@ -15,14 +15,11 @@ Você pode acessar o projeto online através do link:
 
 Este portfólio foi construído utilizando:
 
-- **React.js** (v18.3.1)
+- **React.js**
 - **TailwindCSS** (v3.4.11)
 - **TypeScript**
-- **Vite** (v5.4.1)
-- **React Router Dom**
-- **React Hook Form**
+- **Vite** 
 - **Axios**
-- **React Query**
 - **Dark Mode** com alternância personalizada
 - **Deploy contínuo via Netlify**
 - **Chatbot inteligente "Laura" integrado com a IA Gemini, para respostas contextuais**
@@ -42,7 +39,7 @@ Este portfólio foi construído utilizando:
 ## 🚀 Como rodar localmente
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/andressarodriguesdev/Andressa_portfolio.git
 cd seu-repositorio
 npm install
 npm run dev
