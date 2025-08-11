@@ -7,8 +7,8 @@ export function Projects() {
   const projects = [
     {
       title: "Admin Stay - gerenciamento de hospedagens",
-      description: "AdminStay API é um sistema back‑end em Java  + Spring Boot para gerenciamento de hotéis (clientes, quartos e reservas). O projeto prioriza boas práticas REST, documentação automática via Swagger e testes.",
-      technologies: ["Java", "Spring Boot", "Spring Security", "MySQL", "JUnit", "Docker","Swagger","React"],
+      description: "AdminStay API é um sistema back-end em Java + Spring Boot para gerenciamento de hotéis (clientes, quartos e reservas). O projeto prioriza boas práticas REST, documentação automática via Swagger e testes.",
+      technologies: ["Java", "Spring Boot", "Spring Security", "MySQL", "JUnit", "Docker", "Swagger", "React"],
       githubUrl: "https://github.com/andressarodriguesdev/Admin_Stay.git",
       liveUrl: "https://admin-stay-front.vercel.app/",
       image: "/img/bento-1.png",
@@ -17,7 +17,7 @@ export function Projects() {
     {
       title: "Capivara Management System - catálogo de capivaras",
       description: "Capivara Management System é um software desenvolvido para ajudar na catalogação de capivaras em zoológicos, substituindo o registro manual e facilitando a organização de informações como idade, peso, estado de saúde, e foto via URL.",
-      technologies: ["Nodejs", "Vue", "MySQL","Docker"],
+      technologies: ["Nodejs", "Vue", "MySQL", "Docker"],
       githubUrl: "https://github.com/andressarodriguesdev/capivara_system.git",
       image: "/img/bento-2.png",
       featured: true
@@ -35,7 +35,16 @@ export function Projects() {
       description: "Um aplicativo Android simples desenvolvido em Kotlin, que exibe frases abençoadas de forma aleatória para inspirar seu dia!",
       technologies: ["Kotlin", "Studio Android", "XML"],
       githubUrl:"https://github.com/andressarodriguesdev/FrasesAbencoadas.",
-       image: "/img/bento-4.png",
+      image: "/img/bento-4.png",
+      featured: false
+    },
+    {
+      title: "Cadastro de usuários - API",
+      description: "API RESTful para cadastro, listagem,  e exclusão de usuários. Desenvolvida com Node.js e Express, utilizando MongoDB com o ORM Prisma para garantir a persistência de dados de forma eficiente.",
+      technologies: ["Node.js", "Express", "MongoDB", "Prisma"],
+      githubUrl:"https://github.com/andressarodriguesdev/cadastro-usuarios-front.git",
+       liveUrl: "https://cadastro-usuarios-projeto.vercel.app/",
+      image: "/img/bento-5.png",
       featured: false
     }
   ]
@@ -160,6 +169,16 @@ export function Projects() {
                       <Github className="mr-1 h-3 w-3" />
                       Código
                     </Button>
+                    {project.liveUrl && (
+                      <Button
+                        size="sm"
+                        className="flex-1 bg-gradient-primary hover:bg-gradient-primary/80"
+                        onClick={() => window.open(project.liveUrl, "_blank")}
+                      >
+                        <ExternalLink className="mr-1 h-3 w-3" />
+                        Demo
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
