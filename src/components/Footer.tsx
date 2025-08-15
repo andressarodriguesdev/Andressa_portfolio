@@ -47,8 +47,6 @@ export function Footer() {
               Andressa Rodrigues
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Desenvolvedora Backend Java, Spring Boot e arquiteturas modernas. 
-              Criando soluções escaláveis e eficientes.
             </p>
           </div>
 
