@@ -138,7 +138,7 @@ Resposta:`,
         <Button
           onClick={() => setIsOpen(true)}
           size="lg"
-          className="rounded-full h-14 w-14 shadow-lg bg-gradient-chatbot hover:bg-gradient-primary/80 border-0"
+          className="rounded-full h-16 w-16 shadow-lg bg-gradient-chatbot hover:bg-gradient-primary/80 border-0"
           disabled={loading}
         >
           <MessageCircle className="h-6 w-6" />
