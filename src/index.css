@@ -51,6 +51,10 @@
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
 
     --radius: 1rem;
+
+      --gradient-chatbot:
+    linear-gradient(135deg, #99F6E4, #5EEAD4
+  );
   }
 
   .dark {
@@ -65,7 +69,7 @@
     --popover-foreground: 0 0% 95%;
 
     /* Cores pastel ajustadas para dark mode */
-    --primary: 340 85% 85%;
+   --primary: 340 85% 80%;
     --primary-foreground: 0 0% 5%;
     --primary-dark: 340 85% 70%;
     --primary-light: 340 85% 90%;
@@ -109,5 +113,11 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-chatbot {
+    background: var(--gradient-chatbot);
   }
 }
