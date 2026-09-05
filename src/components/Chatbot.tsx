@@ -92,7 +92,7 @@ export function Chatbot() {
     // 🤖 Caso não seja saudação, continua com a API
     try {
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         contents: `Você é Laura, assistente virtual da Andressa Rodrigues. Baseie suas respostas exclusivamente nas informações a seguir:
 
 ${baseContext}
